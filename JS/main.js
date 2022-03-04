@@ -61,10 +61,8 @@ const subOneBoredom = () => {
     addOneSleepy();
 };
 const subOneSleepy = () => {
-    // removeGif();
     sleepyNum--;
     sleepyCount.innerText = sleepyNum;
-    // removeGif();
     addNapGif();
     addOneHunger();
 };
@@ -72,3 +70,24 @@ const subOneSleepy = () => {
 feedButton.addEventListener('click', subOneHunger);
 playButton.addEventListener('click', subOneBoredom);
 napButton.addEventListener('click', subOneSleepy);
+
+// Adding timers
+
+
+
+// Using name entered on one page as an input in another
+// may need to use class to accomplish this
+
+// let submitName = document.getElementById("name-tama");
+// submitName.onclick = function() {
+//     let tamaName = document.getElementById("name").value;
+//     console.log(`Hi, I'm ${tamaName}`);
+// }
+// const submitButton = () => {
+//     let tamaName = document.getElementById("name").value;
+//     let tamaGreet = `Hai, I'm ${tamaName}!`;
+//     const headerPara = document.getElementById("greet-name");
+//     headerPara.appendChild(tamaGreet);
+//     // console.log(tamaGreet);
+// }
+// submitName.addEventListener('click', submitButton);
