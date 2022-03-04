@@ -51,22 +51,45 @@ const addOneSleepy = () => {
     sleepyCount.innerText = sleepyNum;
 };
 
+/* Function
+upon any elements reaching zero, 
+remove click functionality from all tama game buttons.
+FIXXXXXX
+*/
+
+const numZero = () => {
+    if(hungerNum < 0) {
+        feedButton.removeEventListener('click', subOneHunger);
+    } else if(boredomNum < 0) {
+        playButton.removeEventListener('click', subOneBoredom);
+    } else if(sleepyNum < 0) {
+        napButton.removeEventListener('click', subOneSleepy);
+    } else {
+        feedButton.addEventListener('click', subOneHunger);
+        playButton.addEventListener('click', subOneBoredom);
+        napButton.addEventListener('click', subOneSleepy);
+    }
+};
+
 const subOneHunger = () => {
     // for(num = 10; num > 0; num--) {
     //     num = hungerNum--
     // }
+    numZero();
     hungerNum--;
     hungerCount.innerText = hungerNum;
     addFeedGif();
     addOneBoredom();
 };
 const subOneBoredom = () => {
+    numZero();
     boredomNum--;
     boredomCount.innerText = boredomNum;
     addPlayGif();
     addOneSleepy();
 };
 const subOneSleepy = () => {
+    numZero();
     sleepyNum--;
     sleepyCount.innerText = sleepyNum;
     addNapGif();
@@ -103,13 +126,34 @@ napButton.addEventListener('click', subOneSleepy);
 //     ageCount.innerText = ageNum;
 // }, 1000);
 
+/*
+Game over function
+upon any of the elements reaching 10, must do the following:
+1. remove click functionality of all tamagotchi game buttons
+2. stop all setInterval timers
+3. add gif of tamagotchi glitching (separate function?)
+4. add message to top of screen saying what caused tamagotchi to glitch-hunger,etc.(separate function?)
+
+
+*/
+
+// const gameOver = () => {
+//     if(hungerNum === 10 || boredomNum === 10 || sleepyNum === 10) {
+//         feedButton.removeEventListener('click', subOneHunger);
+//         playButton.removeEventListener('click', subOneBoredom);
+//         napButton.removeEventListener('click', subOneSleepy);
+//     }
+// }
+
+
+//
 // Using name entered on one page as an input in another
 // may need to use class to accomplish this
 
 // let submitName = document.getElementById("name-tama");
 // submitName.onclick = function() {
 //     let tamaName = document.getElementById("name").value;
-//     console.log(`Hi, I'm ${tamaName}`);
+//     console.log(`Hai, I'm ${tamaName}`);
 // }
 // const submitButton = () => {
 //     let tamaName = document.getElementById("name").value;
