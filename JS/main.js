@@ -1,5 +1,5 @@
-// let firstPage = document.getElementById("first");
-// let secondPage = document.getElementById("second");
+// let firstPage = document.getElementById("first-pg");
+// let secondPage = document.getElementById("second-pg");
 // first.style.opacity = 100;
 // second.style.opacity = 0;
 
@@ -178,7 +178,7 @@ upon any of the elements reaching 10, must do the following:
 */
 
 const gameOver = () => {
-    if(hungerNum >= 10) {
+    if(hungerCount === 10) {
         clearInterval(hungerIncrement);
         clearInterval(boredomIncrement);
         clearInterval(sleepyIncrement);
@@ -186,7 +186,7 @@ const gameOver = () => {
         feedButton.removeEventListener('click', subOneHunger);
         playButton.removeEventListener('click', subOneBoredom);
         napButton.removeEventListener('click', subOneSleepy);
-    } else if(boredomNum >= 10) {
+    } else if(boredomCount === 10) {
         clearInterval(hungerIncrement);
         clearInterval(boredomIncrement);
         clearInterval(sleepyIncrement);
@@ -194,7 +194,7 @@ const gameOver = () => {
         feedButton.removeEventListener('click', subOneHunger);
         playButton.removeEventListener('click', subOneBoredom);
         napButton.removeEventListener('click', subOneSleepy);
-    } else if(sleepyNum >= 10) {
+    } else if(sleepyCount === 10) {
         clearInterval(hungerIncrement);
         clearInterval(boredomIncrement);
         clearInterval(sleepyIncrement);
@@ -202,6 +202,17 @@ const gameOver = () => {
         feedButton.removeEventListener('click', subOneHunger);
         playButton.removeEventListener('click', subOneBoredom);
         napButton.removeEventListener('click', subOneSleepy);
+    } else if(ageCount === 5) {
+        clearInterval(hungerIncrement);
+        clearInterval(boredomIncrement);
+        clearInterval(sleepyIncrement);
+        clearInterval(ageIncrement);
+        feedButton.removeEventListener('click', subOneHunger);
+        playButton.removeEventListener('click', subOneBoredom);
+        napButton.removeEventListener('click', subOneSleepy);
+
+        document.getElementById("status-update").innerText = `You win!`;
+        console.log(ageCount);
     }
 }
 
