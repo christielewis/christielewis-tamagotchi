@@ -2,26 +2,26 @@ const removeGif = () => {
     const imgEl = document.querySelector("img");
     const tamaGameId = document.querySelector("#tama-gifs");
     tamaGameId.removeChild(imgEl);
-}
+};
 
 const addFeedGif = () => {
     removeGif();
     let feedGif = document.createElement("img");
     feedGif.setAttribute("src", "https://media4.giphy.com/media/iWkHDNtcHpB5e/giphy.gif?cid=ecf05e47updfo76ke3hr78jvon8985lt2gpc1jyrxr3u88nf&rid=giphy.gif&ct=g");
     document.querySelector("#tama-gifs").appendChild(feedGif);
-}
+};
 const addPlayGif = () => {
     removeGif();
     let playGif = document.createElement("img");
     playGif.setAttribute("src", "https://media0.giphy.com/media/jEyKIvmt0BgLC/giphy.gif?cid=ecf05e47f8zu34sipklh0bq0miebtdrfleniue9vt7xjx056&rid=giphy.gif&ct=g");
     document.querySelector("#tama-gifs").appendChild(playGif);
-}
+};
 const addNapGif = () => {
     removeGif();
     let napGif = document.createElement("img");
     napGif.setAttribute("src", "https://media3.giphy.com/media/JxFmWGrmynlCg/giphy.gif?cid=ecf05e47bgjw672bk7y3o0u2i7le279zl3m43uhq8pszz1oe&rid=giphy.gif&ct=g");
     document.querySelector("#tama-gifs").appendChild(napGif);
-}
+};
 
 const feedButton = document.getElementById("feed");
 const playButton = document.getElementById("play");
@@ -30,10 +30,13 @@ const napButton = document.getElementById("nap");
 let hungerCount = document.getElementById("hunger");
 let boredomCount = document.getElementById("boredom");
 let sleepyCount = document.getElementById("sleepy");
+let ageCount = document.getElementById("age");
 
 let hungerNum = 0;
 let boredomNum = 0;
 let sleepyNum = 0;
+let ageNum = 0;
+// let num = 0;
 
 const addOneHunger = () => {
     hungerNum++;
@@ -49,6 +52,9 @@ const addOneSleepy = () => {
 };
 
 const subOneHunger = () => {
+    // for(num = 10; num > 0; num--) {
+    //     num = hungerNum--
+    // }
     hungerNum--;
     hungerCount.innerText = hungerNum;
     addFeedGif();
@@ -73,7 +79,29 @@ napButton.addEventListener('click', subOneSleepy);
 
 // Adding timers
 
+// Hunger 
+// setInterval(function() {
+//     hungerNum++;
+//     hungerCount.innerText = hungerNum;
+// }, 2000);
 
+// Boredom
+// setInterval(function() {
+//     boredomNum++;
+//     boredomCount.innerText = boredomNum;
+// }, 3000);
+
+// Sleepiness
+// setInterval(function() {
+//     sleepyNum++;
+//     sleepyCount.innerText = sleepyNum;
+// }, 4000);
+
+// Age
+// setInterval(function() {
+//     ageNum++;
+//     ageCount.innerText = ageNum;
+// }, 1000);
 
 // Using name entered on one page as an input in another
 // may need to use class to accomplish this
