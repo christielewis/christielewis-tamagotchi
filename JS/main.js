@@ -1,10 +1,18 @@
-const namePrompt = () => {
-    let tamaName = prompt(`Name your Tamagotchi!`);
-    if(tamaName !== null) {
-        document.getElementById("greet-name").innerText = `Hai, I'm ${tamaName}!`;
-    }
-}
-namePrompt();
+// let firstPage = document.getElementById("first");
+// let secondPage = document.getElementById("second");
+// first.style.opacity = 100;
+// second.style.opacity = 0;
+
+// const namePrompt = () => {
+//     let tamaName = prompt(`Name your Tamagotchi!`);
+//     if(tamaName !== null) {
+//         document.getElementById("greet-name").innerText = `Hai, I'm ${tamaName}!`;
+//     }
+// }
+// namePrompt();
+// first.style.opacity = 0;
+// second.style.opacity = 100;
+
 
 const removeGif = () => {
     const imgEl = document.querySelector("img");
@@ -129,28 +137,34 @@ napButton.addEventListener('click', subOneSleepy);
 // Boredom
 // Sleepiness
 // Age
-// let hungerIncrement = setInterval(function() {
-//     hungerNum++;
-//     hungerCount.innerText = hungerNum;
-// }, 2000);
+let hungerIncrement = setInterval(function() {
+    if(hungerNum < 10) {
+        hungerNum++;
+        hungerCount.innerText = hungerNum;
+    }
+}, 2000);
 
 
-// let boredomIncrement = setInterval(function() {
-//     boredomNum++;
-//     boredomCount.innerText = boredomNum;
-// }, 3000);
+let boredomIncrement = setInterval(function() {
+    if(boredomNum < 10) {
+        boredomNum++;
+        boredomCount.innerText = boredomNum;
+    }
+}, 3000);
 
 
-// let sleepyIncrement = setInterval(function() {
-//     sleepyNum++;
-//     sleepyCount.innerText = sleepyNum;
-// }, 4000);
+let sleepyIncrement = setInterval(function() {
+    if(sleepyNum < 10) {
+        sleepyNum++;
+        sleepyCount.innerText = sleepyNum;
+    }
+}, 4000);
 
 
-// let ageIncrement = setInterval(function() {
-//     ageNum++;
-//     ageCount.innerText = ageNum;
-// }, 1000);
+let ageIncrement = setInterval(function() {
+    ageNum++;
+    ageCount.innerText = ageNum;
+}, 1000);
 
 /*
 Game over function
@@ -164,7 +178,7 @@ upon any of the elements reaching 10, must do the following:
 */
 
 const gameOver = () => {
-    if(hungerNum === 10) {
+    if(hungerNum >= 10) {
         clearInterval(hungerIncrement);
         clearInterval(boredomIncrement);
         clearInterval(sleepyIncrement);
@@ -172,7 +186,7 @@ const gameOver = () => {
         feedButton.removeEventListener('click', subOneHunger);
         playButton.removeEventListener('click', subOneBoredom);
         napButton.removeEventListener('click', subOneSleepy);
-    } else if(boredomNum === 10) {
+    } else if(boredomNum >= 10) {
         clearInterval(hungerIncrement);
         clearInterval(boredomIncrement);
         clearInterval(sleepyIncrement);
@@ -180,7 +194,7 @@ const gameOver = () => {
         feedButton.removeEventListener('click', subOneHunger);
         playButton.removeEventListener('click', subOneBoredom);
         napButton.removeEventListener('click', subOneSleepy);
-    } else if(sleepyNum === 10) {
+    } else if(sleepyNum >= 10) {
         clearInterval(hungerIncrement);
         clearInterval(boredomIncrement);
         clearInterval(sleepyIncrement);
