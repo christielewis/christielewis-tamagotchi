@@ -1,3 +1,11 @@
+const namePrompt = () => {
+    let tamaName = prompt(`Name your Tamagotchi!`);
+    if(tamaName !== null) {
+        document.getElementById("greet-name").innerText = `Hai, I'm ${tamaName}!`;
+    }
+}
+namePrompt();
+
 const removeGif = () => {
     const imgEl = document.querySelector("img");
     const tamaGameId = document.querySelector("#tama-gifs");
@@ -193,17 +201,19 @@ const gameOver = () => {
 // Using name entered on one page as an input in another
 // may need to use class to accomplish this
 
+
+
+// let tamaName = null;
 // let submitName = document.getElementById("name-tama");
 // submitName.onclick = function() {
-//     let tamaName = document.getElementById("name").value;
 //     console.log(`Hai, I'm ${tamaName}`);
 // }
 // const submitButton = () => {
-//     let tamaName = document.getElementById("name").value;
+//     tamaName = document.getElementById("name").value;
 //     let tamaGreet = `Hai, I'm ${tamaName}!`;
 //     const headerPara = document.getElementById("greet-name");
 //     headerPara.appendChild(tamaGreet);
-//     // console.log(tamaGreet);
+//     console.log(tamaGreet);
 // }
 // submitName.addEventListener('click', submitButton);
 
