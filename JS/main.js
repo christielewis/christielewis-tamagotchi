@@ -71,43 +71,49 @@ const addOneSleepy = () => {
 // // FIXXXXXX
 // // */
 
-const numZero = () => {
-    if(hungerNum < 0) {
-        feedButton.removeEventListener('click', subOneHunger);
-    } else if(boredomNum < 0) {
-        playButton.removeEventListener('click', subOneBoredom);
-    } else if(sleepyNum < 0) {
-        napButton.removeEventListener('click', subOneSleepy);
-    } else {
-        feedButton.addEventListener('click', subOneHunger);
-        playButton.addEventListener('click', subOneBoredom);
-        napButton.addEventListener('click', subOneSleepy);
-    }
-};
+// const numZero = () => {
+//     if(hungerNum < 0) {
+//         feedButton.removeEventListener('click', subOneHunger);
+//     } else if(boredomNum < 0) {
+//         playButton.removeEventListener('click', subOneBoredom);
+//     } else if(sleepyNum < 0) {
+//         napButton.removeEventListener('click', subOneSleepy);
+//     } else {
+//         feedButton.addEventListener('click', subOneHunger);
+//         playButton.addEventListener('click', subOneBoredom);
+//         napButton.addEventListener('click', subOneSleepy);
+//     }
+// };
 
 const subOneHunger = () => {
     // for(num = 10; num > 0; num--) {
     //     num = hungerNum--
     // }
     // numZero();
-    hungerNum--;
-    hungerCount.innerText = hungerNum;
+    if(hungerNum > 0) {
+        hungerNum--;
+        hungerCount.innerText = hungerNum;
+    }
     addFeedGif();
     addOneBoredom();
     gameOver();
 };
 const subOneBoredom = () => {
     // numZero();
-    boredomNum--;
-    boredomCount.innerText = boredomNum;
+    if(boredomNum > 0) {
+        boredomNum--;
+        boredomCount.innerText = boredomNum;
+    }
     addPlayGif();
     addOneSleepy();
     gameOver();
 };
 const subOneSleepy = () => {
     // numZero();
-    sleepyNum--;
-    sleepyCount.innerText = sleepyNum;
+    if(sleepyNum > 0) {
+        sleepyNum--;
+        sleepyCount.innerText = sleepyNum;
+    }
     addNapGif();
     addOneHunger();
     gameOver();
@@ -158,7 +164,6 @@ upon any of the elements reaching 10, must do the following:
 */
 
 const gameOver = () => {
-    numZero();
     if(hungerNum === 10) {
         clearInterval(hungerIncrement);
         clearInterval(boredomIncrement);
