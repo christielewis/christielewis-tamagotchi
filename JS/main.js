@@ -3,13 +3,13 @@
 // first.style.opacity = 100;
 // second.style.opacity = 0;
 
-// const namePrompt = () => {
-//     let tamaName = prompt(`Name your Tamagotchi!`);
-//     if(tamaName !== null) {
-//         document.getElementById("greet-name").innerText = `Hai, I'm ${tamaName}!`;
-//     }
-// }
-// namePrompt();
+const namePrompt = () => {
+    let tamaName = prompt(`Name your Tamagotchi!`);
+    if(tamaName !== null) {
+        document.getElementById("greet-name").innerText = `Hai, I'm ${tamaName}!`;
+    }
+}
+namePrompt();
 // first.style.opacity = 0;
 // second.style.opacity = 100;
 
