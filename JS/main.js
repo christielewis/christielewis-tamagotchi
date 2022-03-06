@@ -8,7 +8,13 @@ const namePrompt = () => {
     if(tamaName !== null) {
         document.getElementById("greet-name").innerText = `Hai, I'm ${tamaName}!`;
     }
-}
+    if(tamaName === "" || tamaName === null) {
+        tamaName = prompt(`Please name me! I want to be friends!`)
+        namePrompt();
+        document.getElementById("greet-name").innerText = `Hai, I'm ${tamaName}!`;
+    }
+};
+
 namePrompt();
 // first.style.opacity = 0;
 // second.style.opacity = 100;
@@ -23,7 +29,8 @@ const removeGif = () => {
 const addFeedGif = () => {
     removeGif();
     let feedGif = document.createElement("img");
-    feedGif.setAttribute("src", "https://media4.giphy.com/media/iWkHDNtcHpB5e/giphy.gif?cid=ecf05e47updfo76ke3hr78jvon8985lt2gpc1jyrxr3u88nf&rid=giphy.gif&ct=g");
+    feedGif.setAttribute("src", "https://media2.giphy.com/media/EWRdYtAvIgZZAPa2V4/200w.gif");
+    // feedGif.setAttribute("src", "https://media4.giphy.com/media/iWkHDNtcHpB5e/giphy.gif?cid=ecf05e47updfo76ke3hr78jvon8985lt2gpc1jyrxr3u88nf&rid=giphy.gif&ct=g");
     feedGif.setAttribute("width", "150px");
     feedGif.setAttribute("height", "150px");
     document.querySelector("#tama-gifs").appendChild(feedGif);
@@ -31,7 +38,8 @@ const addFeedGif = () => {
 const addPlayGif = () => {
     removeGif();
     let playGif = document.createElement("img");
-    playGif.setAttribute("src", "https://media0.giphy.com/media/jEyKIvmt0BgLC/giphy.gif?cid=ecf05e47f8zu34sipklh0bq0miebtdrfleniue9vt7xjx056&rid=giphy.gif&ct=g");
+    playGif.setAttribute("src", "https://media0.giphy.com/media/JoUjiOB8HFs9OwnaoP/200w.gif?cid=82a1493btegu2yfqz7iv1q0bbfy6yigaqcavoqv24dpt894v&rid=200w.gif&ct=s");
+    // playGif.setAttribute("src", "https://media0.giphy.com/media/jEyKIvmt0BgLC/giphy.gif?cid=ecf05e47f8zu34sipklh0bq0miebtdrfleniue9vt7xjx056&rid=giphy.gif&ct=g");
     playGif.setAttribute("width", "150px");
     playGif.setAttribute("height", "150px");
     document.querySelector("#tama-gifs").appendChild(playGif);
@@ -39,10 +47,20 @@ const addPlayGif = () => {
 const addNapGif = () => {
     removeGif();
     let napGif = document.createElement("img");
-    napGif.setAttribute("src", "https://media3.giphy.com/media/JxFmWGrmynlCg/giphy.gif?cid=ecf05e47bgjw672bk7y3o0u2i7le279zl3m43uhq8pszz1oe&rid=giphy.gif&ct=g");
+    napGif.setAttribute("src", "https://media0.giphy.com/media/l5Ixyi91ENW1N2MyAc/giphy.gif?cid=6c09b952ca8ct8e65z9klqgszi62c6yz1v7dzdojqeme1hok&rid=giphy.gif&ct=s");
+    // napGif.setAttribute("src", "https://media3.giphy.com/media/JxFmWGrmynlCg/giphy.gif?cid=ecf05e47bgjw672bk7y3o0u2i7le279zl3m43uhq8pszz1oe&rid=giphy.gif&ct=g");
     napGif.setAttribute("width", "150px");
     napGif.setAttribute("height", "150px");
     document.querySelector("#tama-gifs").appendChild(napGif);
+};
+const addGameOverGif = () => {
+    removeGif();
+    let gameOverGif = document.createElement("img");
+    gameOverGif.setAttribute("src", "https://media2.giphy.com/media/ktvFa67wmjDEI/200w.gif?cid=82a1493bmlv4wwpvznn38vqe7t1a95kmy2wt3rrgmda8ika3&rid=200w.gif&ct=g");
+    // napGif.setAttribute("src", "https://media3.giphy.com/media/JxFmWGrmynlCg/giphy.gif?cid=ecf05e47bgjw672bk7y3o0u2i7le279zl3m43uhq8pszz1oe&rid=giphy.gif&ct=g");
+    gameOverGif.setAttribute("width", "150px");
+    gameOverGif.setAttribute("height", "150px");
+    document.querySelector("#tama-gifs").appendChild(gameOverGif);
 };
 
 const feedButton = document.getElementById("feed");
@@ -131,12 +149,6 @@ feedButton.addEventListener('click', subOneHunger);
 playButton.addEventListener('click', subOneBoredom);
 napButton.addEventListener('click', subOneSleepy);
 
-// Adding timers
-
-// Hunger 
-// Boredom
-// Sleepiness
-// Age
 let hungerIncrement = setInterval(function() {
     if(hungerNum < 10) {
         hungerNum++;
@@ -166,6 +178,13 @@ let ageIncrement = setInterval(function() {
     ageCount.innerText = ageNum;
 }, 1000);
 
+// Adding timers
+
+// Hunger 
+// Boredom
+// Sleepiness
+// Age
+
 /*
 Game over function
 upon any of the elements reaching 10, must do the following:
@@ -177,47 +196,24 @@ upon any of the elements reaching 10, must do the following:
 
 */
 
-const gameOver = () => {
-    if(hungerCount === 10) {
-        clearInterval(hungerIncrement);
-        clearInterval(boredomIncrement);
-        clearInterval(sleepyIncrement);
-        clearInterval(ageIncrement);
-        feedButton.removeEventListener('click', subOneHunger);
-        playButton.removeEventListener('click', subOneBoredom);
-        napButton.removeEventListener('click', subOneSleepy);
-    } else if(boredomCount === 10) {
-        clearInterval(hungerIncrement);
-        clearInterval(boredomIncrement);
-        clearInterval(sleepyIncrement);
-        clearInterval(ageIncrement);
-        feedButton.removeEventListener('click', subOneHunger);
-        playButton.removeEventListener('click', subOneBoredom);
-        napButton.removeEventListener('click', subOneSleepy);
-    } else if(sleepyCount === 10) {
-        clearInterval(hungerIncrement);
-        clearInterval(boredomIncrement);
-        clearInterval(sleepyIncrement);
-        clearInterval(ageIncrement);
-        feedButton.removeEventListener('click', subOneHunger);
-        playButton.removeEventListener('click', subOneBoredom);
-        napButton.removeEventListener('click', subOneSleepy);
-    } else if(ageCount === 5) {
-        clearInterval(hungerIncrement);
-        clearInterval(boredomIncrement);
-        clearInterval(sleepyIncrement);
-        clearInterval(ageIncrement);
-        feedButton.removeEventListener('click', subOneHunger);
-        playButton.removeEventListener('click', subOneBoredom);
-        napButton.removeEventListener('click', subOneSleepy);
-
-        document.getElementById("status-update").innerText = `You win!`;
-        console.log(ageCount);
-    }
-}
-
 // const gameOver = () => {
-//     if(hungerNum >= 10 || boredomNum >= 10 || sleepyNum >= 10) {
+//     if(hungerNum >= 10) {
+//         clearInterval(hungerIncrement);
+//         clearInterval(boredomIncrement);
+//         clearInterval(sleepyIncrement);
+//         clearInterval(ageIncrement);
+//         feedButton.removeEventListener('click', subOneHunger);
+//         playButton.removeEventListener('click', subOneBoredom);
+//         napButton.removeEventListener('click', subOneSleepy);
+//     } else if(boredomNum >= 10) {
+//         clearInterval(hungerIncrement);
+//         clearInterval(boredomIncrement);
+//         clearInterval(sleepyIncrement);
+//         clearInterval(ageIncrement);
+//         feedButton.removeEventListener('click', subOneHunger);
+//         playButton.removeEventListener('click', subOneBoredom);
+//         napButton.removeEventListener('click', subOneSleepy);
+//     } else if(sleepyNum >= 10) {
 //         clearInterval(hungerIncrement);
 //         clearInterval(boredomIncrement);
 //         clearInterval(sleepyIncrement);
@@ -227,6 +223,19 @@ const gameOver = () => {
 //         napButton.removeEventListener('click', subOneSleepy);
 //     }
 // }
+
+const gameOver = () => {
+    if(hungerNum >= 10 || boredomNum >= 10 || sleepyNum >= 10) {
+        clearInterval(hungerIncrement);
+        clearInterval(boredomIncrement);
+        clearInterval(sleepyIncrement);
+        clearInterval(ageIncrement);
+        addGameOverGif();
+        feedButton.removeEventListener('click', subOneHunger);
+        playButton.removeEventListener('click', subOneBoredom);
+        napButton.removeEventListener('click', subOneSleepy);
+    }
+}
 //
 // Using name entered on one page as an input in another
 // may need to use class to accomplish this

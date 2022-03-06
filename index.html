@@ -8,30 +8,33 @@
     <script src="./js/main.js" async defer></script>
     <title>Tamagotcha!</title>
 </head>
-<body>
+<body id="firstpg-bg">
+<!-- <body id="firstpg-bg" style="background-image: url('https://media4.giphy.com/media/eZsKqkZUEM5vG/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g')"> -->
     <header>
         <h1>Welcome to Tamagotcha!</h1>
-        <h3>Please enter your pet's name below!</h3>
         <p>
             Make sure to read the rules before getting started!
         </p>
     </header>
     <section class="tama-game">
         <div id="firstpg-gif">
-            <img src="https://media4.giphy.com/media/eZsKqkZUEM5vG/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g" alt="Dancing Pusheen">
+            <img src="https://media4.giphy.com/media/eZsKqkZUEM5vG/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g" alt="Dancing Pusheen" width="150px" height="100px">
         </div>
         <button class="tama-button" id="feed">Feed</button>
         <button class="tama-button" id="play">Play</button>
         <button class="tama-button" id="nap">Nap</button>
     </section>
     <aside class="game-rules">
-        <p>
+        <p class="game-rules">
             Rules for the game: <br>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul class="game-rules">
+                <li>Name your pet!</li>
+                <li>Try to age your pet as far as you can!</li>
+                <li>Do not let hunger, boredom, or sleepiness <br> reach 10, or it will die!</li>
+                <li>Click <button>Feed</button> to decrease hunger by 1. <br>BE CAREFUL, it'll increase boredom by 1.</li>
+                <li>Click <button>Play</button> to decrease boredom by 1. <br>BE CAREFUL, it'll increase sleepiness by 1.</li>
+                <li>Click <button>Nap</button> to decrease sleepiness by 1. <br>BE CAREFUL, it'll increase hunger by 1.</li>
+                <li>Last but not least, HAVE FUN!</li>
             </ul>
         </p>
     </aside>
@@ -49,100 +52,3 @@
     </footer>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
-    <script src="./js/main.js" async defer></script>
-    <title>Tamagotcha!</title>
-</head>
-<body>
-   <section id="first-pg">
-    <header>
-        <h1>Welcome to Tamagotcha!</h1>
-        <h3>Please enter your pet's name below!</h3>
-        <p>
-            Make sure to read the rules before getting started!
-        </p>
-    </header>
-    <section class="tama-game">
-        <div id="firstpg-gif">
-            <img src="https://media4.giphy.com/media/eZsKqkZUEM5vG/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g" alt="Dancing Pusheen">
-        </div>
-        <button class="tama-button" id="feed">Feed</button>
-        <button class="tama-button" id="play">Play</button>
-        <button class="tama-button" id="nap">Nap</button>
-    </section>
-    <aside class="game-rules">
-        <p>
-            Rules for the game: <br>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </p>
-    </aside>
-    <form id="tama-name">
-
-    </form>
-     <section class="tama-name">
-        <input type="name" id="name" placeholder="Name your pet!">
-        <input type="submit" id="name-tama" value="submit">
-        <button id="name-tama"><a href="firstpg.html">Start</a></button>
-         <a href="index.html"></a> 
-    </section>
-    <footer>
-        <ul>
-            <li><a href="https://github.com/christielewis/">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/christie-lewis/">LinkedIn</a></li>
-        </ul>
-    </footer>
-   </section>
-   <section class="hidden" id="second-pg">
-    <header class="tama-info">
-        <h1 id="greet-name">
-        </h1>
-        <p id="status-update">
-
-        </p>
-    </header>
-    <section class="tama-game">
-        <span id="tama-gifs">
-            <img src="https://media3.giphy.com/media/IMfi5ugpf3W1y/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g" alt="CoolPusheen">
-        </span>
-        <button class="tama-button" id="feed">Feed</button>
-        <button class="tama-button" id="play">Play</button>
-        <button class="tama-button" id="nap">Nap</button>
-    </section>
-    <aside class="restart-game">
-        <p id="game-over">
-             Game Over <br>
-                Play again!
-        </p>
-        <button><a href="index.html">Restart</a></button>
-    </aside>
-    <section class="tama-status">
-        <ul>
-            <li class="tama-status">Hunger: <span id="hunger">0</span></li>
-            <li class="tama-status">Boredom: <span id="boredom">0</span></li>
-            <li class="tama-status">Sleepiness: <span id="sleepy">0</span></li>
-            <li class="tama-status">Age: <span id="age">0</span></li>
-        </ul>
-    </section>
-    <footer>
-        <ul>
-            <li><a href="https://github.com/christielewis/">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/christie-lewis/">LinkedIn</a></li>
-        </ul>
-    </footer>
-   </section>
-</body>
-</html> -->
-<!-- <a href="#" class="active">About Me</a> | -->
-<!-- <a href="resume.html">Résumé</a> -->
