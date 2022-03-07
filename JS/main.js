@@ -29,7 +29,6 @@ const addFeedGif = () => {
     removeGif();
     let feedGif = document.createElement("img");
     feedGif.setAttribute("src", "https://media2.giphy.com/media/EWRdYtAvIgZZAPa2V4/200w.gif");
-    // feedGif.setAttribute("src", "https://media4.giphy.com/media/iWkHDNtcHpB5e/giphy.gif?cid=ecf05e47updfo76ke3hr78jvon8985lt2gpc1jyrxr3u88nf&rid=giphy.gif&ct=g");
     feedGif.setAttribute("width", "250px");
     feedGif.setAttribute("height", "250px");
     document.querySelector("#tama-gifs").appendChild(feedGif);
@@ -38,7 +37,6 @@ const addPlayGif = () => {
     removeGif();
     let playGif = document.createElement("img");
     playGif.setAttribute("src", "https://media0.giphy.com/media/JoUjiOB8HFs9OwnaoP/200w.gif?cid=82a1493btegu2yfqz7iv1q0bbfy6yigaqcavoqv24dpt894v&rid=200w.gif&ct=s");
-    // playGif.setAttribute("src", "https://media0.giphy.com/media/jEyKIvmt0BgLC/giphy.gif?cid=ecf05e47f8zu34sipklh0bq0miebtdrfleniue9vt7xjx056&rid=giphy.gif&ct=g");
     playGif.setAttribute("width", "250px");
     playGif.setAttribute("height", "250px");
     document.querySelector("#tama-gifs").appendChild(playGif);
@@ -47,7 +45,6 @@ const addNapGif = () => {
     removeGif();
     let napGif = document.createElement("img");
     napGif.setAttribute("src", "https://media0.giphy.com/media/l5Ixyi91ENW1N2MyAc/giphy.gif?cid=6c09b952ca8ct8e65z9klqgszi62c6yz1v7dzdojqeme1hok&rid=giphy.gif&ct=s");
-    // napGif.setAttribute("src", "https://media3.giphy.com/media/JxFmWGrmynlCg/giphy.gif?cid=ecf05e47bgjw672bk7y3o0u2i7le279zl3m43uhq8pszz1oe&rid=giphy.gif&ct=g");
     napGif.setAttribute("width", "250px");
     napGif.setAttribute("height", "250px");
     document.querySelector("#tama-gifs").appendChild(napGif);
