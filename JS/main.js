@@ -26,6 +26,14 @@ const removeGif = () => {
     tamaGameId.removeChild(imgEl);
 };
 
+const addOrigGif = () => {
+    removeGif();
+    let origGif = document.createElement("img");
+    origGif.setAttribute("src", "https://media3.giphy.com/media/IMfi5ugpf3W1y/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g");
+    origGif.setAttribute("width", "150px");
+    origGif.setAttribute("height", "150px");
+    document.querySelector("#tama-gifs").appendChild(origGif);
+};
 const addFeedGif = () => {
     removeGif();
     let feedGif = document.createElement("img");
@@ -57,7 +65,6 @@ const addGameOverGif = () => {
     removeGif();
     let gameOverGif = document.createElement("img");
     gameOverGif.setAttribute("src", "https://media2.giphy.com/media/ktvFa67wmjDEI/200w.gif?cid=82a1493bmlv4wwpvznn38vqe7t1a95kmy2wt3rrgmda8ika3&rid=200w.gif&ct=g");
-    // napGif.setAttribute("src", "https://media3.giphy.com/media/JxFmWGrmynlCg/giphy.gif?cid=ecf05e47bgjw672bk7y3o0u2i7le279zl3m43uhq8pszz1oe&rid=giphy.gif&ct=g");
     gameOverGif.setAttribute("width", "150px");
     gameOverGif.setAttribute("height", "150px");
     document.querySelector("#tama-gifs").appendChild(gameOverGif);
@@ -66,11 +73,17 @@ const addGameOverGif = () => {
 const feedButton = document.getElementById("feed");
 const playButton = document.getElementById("play");
 const napButton = document.getElementById("nap");
+const yesButton = document.getElementById("yes");
+
+const resetButton = document.getElementById("reset");
+const startButton = document.getElementById("start");
 
 let hungerCount = document.getElementById("hunger");
 let boredomCount = document.getElementById("boredom");
 let sleepyCount = document.getElementById("sleepy");
 let ageCount = document.getElementById("age");
+let gameOverMsg = document.getElementById("game-over");
+let startOverMsg = document.getElementById("start-over");
 
 let hungerNum = 0;
 let boredomNum = 0;
@@ -149,34 +162,63 @@ feedButton.addEventListener('click', subOneHunger);
 playButton.addEventListener('click', subOneBoredom);
 napButton.addEventListener('click', subOneSleepy);
 
-let hungerIncrement = setInterval(function() {
-    if(hungerNum < 10) {
-        hungerNum++;
-        hungerCount.innerText = hungerNum;
-    }
-}, 2000);
+hungerIncrement = null;
+boredomIncrement = null;
+sleepyIncrement = null;
+ageIncrement = null;
 
+// let hungerIncrement = setInterval(function() {
+//     if(hungerNum < 10) {
+//         hungerNum++;
+//         hungerCount.innerText = hungerNum;
+//     }
+// }, 2000);
+const hungerCountFunc = () => {
+    hungerIncrement = setInterval(function() {
+        if(hungerNum < 10) {
+            hungerNum++;
+            hungerCount.innerText = hungerNum;
+        }
+    }, 2000);
+}
 
-let boredomIncrement = setInterval(function() {
-    if(boredomNum < 10) {
-        boredomNum++;
-        boredomCount.innerText = boredomNum;
-    }
-}, 3000);
+// let boredomIncrement = setInterval(function() {
+//     if(boredomNum < 10) {
+//         boredomNum++;
+//         boredomCount.innerText = boredomNum;
+//     }
+// }, 3000);
+const boredomCountFunc = () => {
+    boredomIncrement = setInterval(function() {
+        if(boredomNum < 10) {
+            boredomNum++;
+            boredomCount.innerText = boredomNum;
+        }
+    }, 3000);
+}
 
+// let sleepyIncrement = setInterval(function() {
+//     if(sleepyNum < 10) {
+//         sleepyNum++;
+//         sleepyCount.innerText = sleepyNum;
+//     }
+// }, 4000);
+const sleepyCountFunc = () => {
+    sleepyIncrement = setInterval(function() {
+        if(sleepyNum < 10) {
+            sleepyNum++;
+            sleepyCount.innerText = sleepyNum;
+        }
+    }, 4000);
+}
 
-let sleepyIncrement = setInterval(function() {
-    if(sleepyNum < 10) {
-        sleepyNum++;
-        sleepyCount.innerText = sleepyNum;
-    }
-}, 4000);
+const ageCountFunc = () => {
+    ageIncrement = setInterval(function() {
+        ageNum++;
+        ageCount.innerText = ageNum;
+    }, 1000);
 
-
-let ageIncrement = setInterval(function() {
-    ageNum++;
-    ageCount.innerText = ageNum;
-}, 1000);
+}
 
 // Adding timers
 
@@ -196,46 +238,110 @@ upon any of the elements reaching 10, must do the following:
 
 */
 
+const gameOverMsgs = () => {
+    if(hungerNum >=10) {
+        gameOverMsg.innerText = `I died of hunger!`;
+    } else if(boredomNum >=10) {
+        gameOverMsg.innerText = `I died of boredom!`;
+    } else if(sleepyNum >= 10) {
+        gameOverMsg.innerText = `I died of sleepiness!`;
+    }
+}
+
+const gameOver = () => {
+    gameOverMsgs();
+    if(hungerNum >= 10) {
+        clearInterval(hungerIncrement);
+        clearInterval(boredomIncrement);
+        clearInterval(sleepyIncrement);
+        clearInterval(ageIncrement);
+        feedButton.removeEventListener('click', subOneHunger);
+        playButton.removeEventListener('click', subOneBoredom);
+        napButton.removeEventListener('click', subOneSleepy);
+        startOverMsg.innerText = `Play again? Click "Yes" and press "Start"!`
+        addGameOverGif();
+    } else if(boredomNum >= 10) {
+        clearInterval(hungerIncrement);
+        clearInterval(boredomIncrement);
+        clearInterval(sleepyIncrement);
+        clearInterval(ageIncrement);
+        feedButton.removeEventListener('click', subOneHunger);
+        playButton.removeEventListener('click', subOneBoredom);
+        napButton.removeEventListener('click', subOneSleepy);
+        // gameOverMsg.innerText = `I died of boredom!`
+        startOverMsg.innerText = `Play again? Click "Yes" and press "Start"!`
+        addGameOverGif();
+    } else if(sleepyNum >= 10) {
+        clearInterval(hungerIncrement);
+        clearInterval(boredomIncrement);
+        clearInterval(sleepyIncrement);
+        clearInterval(ageIncrement);
+        // clearInterval(hungerCountFunc);
+        // clearInterval(boredomCountFunc);
+        // clearInterval(sleepyCountFunc);
+        // clearInterval(ageCountFunc);
+        feedButton.removeEventListener('click', subOneHunger);
+        playButton.removeEventListener('click', subOneBoredom);
+        napButton.removeEventListener('click', subOneSleepy);
+        // gameOverMsg.innerText = `I died of sleepiness!`
+        startOverMsg.innerText = `Play again? Click "Yes" and press "Start"!`
+        addGameOverGif();
+    }
+}
+
+const resetGame = () => {
+    clearInterval(hungerIncrement);
+    clearInterval(boredomIncrement);
+    clearInterval(sleepyIncrement);
+    clearInterval(ageIncrement);
+    hungerNum = 0;
+    boredomNum = 0;
+    sleepyNum = 0;
+    ageNum = 0;
+    hungerCount.innerText = hungerNum;
+    boredomCount.innerText = boredomNum;
+    sleepyCount.innerText = sleepyNum;
+    ageCount.innerText = ageNum;
+    feedButton.removeEventListener('click', subOneHunger);
+    playButton.removeEventListener('click', subOneBoredom);
+    napButton.removeEventListener('click', subOneSleepy);
+    startOverMsg.innerText = "";
+    gameOverMsg.innerText = "";
+    addOrigGif();
+    // document.querySelector(".tama-info").removeChild(gameOverMsg);
+    // document.querySelector(".restart-game").removeChild(startOverMsg);
+}
+
+// resetButton.addEventListener('click', resetGame);
+
+const play = () => {
+    hungerCountFunc();
+    boredomCountFunc();
+    sleepyCountFunc();
+    ageCountFunc();
+    feedButton.addEventListener('click', subOneHunger);
+    playButton.addEventListener('click', subOneBoredom);
+    napButton.addEventListener('click', subOneSleepy);
+    document.querySelector(".tama-info").appendChild(gameOverMsg);
+    document.querySelector(".restart-game").appendChild(startOverMsg);
+}
+
+startButton.addEventListener('click', play);
+yesButton.addEventListener('click', resetGame);
+
+
 // const gameOver = () => {
-//     if(hungerNum >= 10) {
+//     if(hungerNum >= 10 || boredomNum >= 10 || sleepyNum >= 10) {
 //         clearInterval(hungerIncrement);
 //         clearInterval(boredomIncrement);
 //         clearInterval(sleepyIncrement);
 //         clearInterval(ageIncrement);
-//         feedButton.removeEventListener('click', subOneHunger);
-//         playButton.removeEventListener('click', subOneBoredom);
-//         napButton.removeEventListener('click', subOneSleepy);
-//     } else if(boredomNum >= 10) {
-//         clearInterval(hungerIncrement);
-//         clearInterval(boredomIncrement);
-//         clearInterval(sleepyIncrement);
-//         clearInterval(ageIncrement);
-//         feedButton.removeEventListener('click', subOneHunger);
-//         playButton.removeEventListener('click', subOneBoredom);
-//         napButton.removeEventListener('click', subOneSleepy);
-//     } else if(sleepyNum >= 10) {
-//         clearInterval(hungerIncrement);
-//         clearInterval(boredomIncrement);
-//         clearInterval(sleepyIncrement);
-//         clearInterval(ageIncrement);
+//         addGameOverGif();
 //         feedButton.removeEventListener('click', subOneHunger);
 //         playButton.removeEventListener('click', subOneBoredom);
 //         napButton.removeEventListener('click', subOneSleepy);
 //     }
 // }
-
-const gameOver = () => {
-    if(hungerNum >= 10 || boredomNum >= 10 || sleepyNum >= 10) {
-        clearInterval(hungerIncrement);
-        clearInterval(boredomIncrement);
-        clearInterval(sleepyIncrement);
-        clearInterval(ageIncrement);
-        addGameOverGif();
-        feedButton.removeEventListener('click', subOneHunger);
-        playButton.removeEventListener('click', subOneBoredom);
-        napButton.removeEventListener('click', subOneSleepy);
-    }
-}
 //
 // Using name entered on one page as an input in another
 // may need to use class to accomplish this
