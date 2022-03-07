@@ -3,8 +3,8 @@
 // first.style.opacity = 100;
 // second.style.opacity = 0;
 
+let tamaName = prompt(`Name your Tamagotchi!`);
 const namePrompt = () => {
-    let tamaName = prompt(`Name your Tamagotchi!`);
     if(tamaName !== null) {
         document.getElementById("greet-name").innerText = `Hai, I'm ${tamaName}!`;
     }
@@ -14,8 +14,8 @@ const namePrompt = () => {
         document.getElementById("greet-name").innerText = `Hai, I'm ${tamaName}!`;
     }
 };
-
 namePrompt();
+
 // first.style.opacity = 0;
 // second.style.opacity = 100;
 
@@ -29,9 +29,9 @@ const removeGif = () => {
 const addOrigGif = () => {
     removeGif();
     let origGif = document.createElement("img");
-    origGif.setAttribute("src", "https://media3.giphy.com/media/IMfi5ugpf3W1y/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g");
-    origGif.setAttribute("width", "150px");
-    origGif.setAttribute("height", "150px");
+    origGif.setAttribute("src", "https://media0.giphy.com/media/4PUkqN8QQsaFIkqi8a/giphy.gif?cid=6c09b95276f2d81951db2d1cd9b626e8512b3d8598c4a5d0&rid=giphy.gif&ct=s");
+    origGif.setAttribute("width", "250px");
+    origGif.setAttribute("height", "250px");
     document.querySelector("#tama-gifs").appendChild(origGif);
 };
 const addFeedGif = () => {
@@ -39,8 +39,8 @@ const addFeedGif = () => {
     let feedGif = document.createElement("img");
     feedGif.setAttribute("src", "https://media2.giphy.com/media/EWRdYtAvIgZZAPa2V4/200w.gif");
     // feedGif.setAttribute("src", "https://media4.giphy.com/media/iWkHDNtcHpB5e/giphy.gif?cid=ecf05e47updfo76ke3hr78jvon8985lt2gpc1jyrxr3u88nf&rid=giphy.gif&ct=g");
-    feedGif.setAttribute("width", "150px");
-    feedGif.setAttribute("height", "150px");
+    feedGif.setAttribute("width", "250px");
+    feedGif.setAttribute("height", "250px");
     document.querySelector("#tama-gifs").appendChild(feedGif);
 };
 const addPlayGif = () => {
@@ -48,8 +48,8 @@ const addPlayGif = () => {
     let playGif = document.createElement("img");
     playGif.setAttribute("src", "https://media0.giphy.com/media/JoUjiOB8HFs9OwnaoP/200w.gif?cid=82a1493btegu2yfqz7iv1q0bbfy6yigaqcavoqv24dpt894v&rid=200w.gif&ct=s");
     // playGif.setAttribute("src", "https://media0.giphy.com/media/jEyKIvmt0BgLC/giphy.gif?cid=ecf05e47f8zu34sipklh0bq0miebtdrfleniue9vt7xjx056&rid=giphy.gif&ct=g");
-    playGif.setAttribute("width", "150px");
-    playGif.setAttribute("height", "150px");
+    playGif.setAttribute("width", "250px");
+    playGif.setAttribute("height", "250px");
     document.querySelector("#tama-gifs").appendChild(playGif);
 };
 const addNapGif = () => {
@@ -57,16 +57,16 @@ const addNapGif = () => {
     let napGif = document.createElement("img");
     napGif.setAttribute("src", "https://media0.giphy.com/media/l5Ixyi91ENW1N2MyAc/giphy.gif?cid=6c09b952ca8ct8e65z9klqgszi62c6yz1v7dzdojqeme1hok&rid=giphy.gif&ct=s");
     // napGif.setAttribute("src", "https://media3.giphy.com/media/JxFmWGrmynlCg/giphy.gif?cid=ecf05e47bgjw672bk7y3o0u2i7le279zl3m43uhq8pszz1oe&rid=giphy.gif&ct=g");
-    napGif.setAttribute("width", "150px");
-    napGif.setAttribute("height", "150px");
+    napGif.setAttribute("width", "250px");
+    napGif.setAttribute("height", "250px");
     document.querySelector("#tama-gifs").appendChild(napGif);
 };
 const addGameOverGif = () => {
     removeGif();
     let gameOverGif = document.createElement("img");
-    gameOverGif.setAttribute("src", "https://media2.giphy.com/media/ktvFa67wmjDEI/200w.gif?cid=82a1493bmlv4wwpvznn38vqe7t1a95kmy2wt3rrgmda8ika3&rid=200w.gif&ct=g");
-    gameOverGif.setAttribute("width", "150px");
-    gameOverGif.setAttribute("height", "150px");
+    gameOverGif.setAttribute("src", "https://s3.us-east-2.amazonaws.com/stickers-for-discord/pusheen-1527661743171-rofl.png");
+    gameOverGif.setAttribute("width", "250px");
+    gameOverGif.setAttribute("height", "250px");
     document.querySelector("#tama-gifs").appendChild(gameOverGif);
 };
 
@@ -240,11 +240,11 @@ upon any of the elements reaching 10, must do the following:
 
 const gameOverMsgs = () => {
     if(hungerNum >=10) {
-        gameOverMsg.innerText = `I died of hunger!`;
+        gameOverMsg.innerText = `I died of hunger! I made it to ${ageNum} years old.`;
     } else if(boredomNum >=10) {
-        gameOverMsg.innerText = `I died of boredom!`;
+        gameOverMsg.innerText = `I died of boredom! I made it to ${ageNum} years old.`;
     } else if(sleepyNum >= 10) {
-        gameOverMsg.innerText = `I died of sleepiness!`;
+        gameOverMsg.innerText = `I died of sleepiness! I made it to ${ageNum} years old.`;
     }
 }
 
@@ -258,7 +258,7 @@ const gameOver = () => {
         feedButton.removeEventListener('click', subOneHunger);
         playButton.removeEventListener('click', subOneBoredom);
         napButton.removeEventListener('click', subOneSleepy);
-        startOverMsg.innerText = `Play again? Click "Yes" and press "Start"!`
+        startOverMsg.innerText = `Play again? Click "Yes" then "Start"!`
         addGameOverGif();
     } else if(boredomNum >= 10) {
         clearInterval(hungerIncrement);
@@ -269,7 +269,7 @@ const gameOver = () => {
         playButton.removeEventListener('click', subOneBoredom);
         napButton.removeEventListener('click', subOneSleepy);
         // gameOverMsg.innerText = `I died of boredom!`
-        startOverMsg.innerText = `Play again? Click "Yes" and press "Start"!`
+        startOverMsg.innerText = `Play again? Click "Yes" then "Start"!`
         addGameOverGif();
     } else if(sleepyNum >= 10) {
         clearInterval(hungerIncrement);
@@ -284,7 +284,8 @@ const gameOver = () => {
         playButton.removeEventListener('click', subOneBoredom);
         napButton.removeEventListener('click', subOneSleepy);
         // gameOverMsg.innerText = `I died of sleepiness!`
-        startOverMsg.innerText = `Play again? Click "Yes" and press "Start"!`
+        startOverMsg.innerText = `Play again? Click "Yes" then "Start"!`
+        // startOverMsg.innerText = `${tamaName} died at age ${ageNum}. Play again? Click "Yes" and press "Start"!`
         addGameOverGif();
     }
 }
@@ -323,7 +324,7 @@ const play = () => {
     playButton.addEventListener('click', subOneBoredom);
     napButton.addEventListener('click', subOneSleepy);
     document.querySelector(".tama-info").appendChild(gameOverMsg);
-    document.querySelector(".restart-game").appendChild(startOverMsg);
+    document.querySelector("#restart-game").appendChild(startOverMsg);
 }
 
 startButton.addEventListener('click', play);

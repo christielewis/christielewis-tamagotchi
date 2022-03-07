@@ -1,22 +1,167 @@
-#tama-gifs img {
-    width: 150px;
-    height: 150px;
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Monoton&family=Moo+Lah+Lah&family=Press+Start+2P&family=Turret+Road:wght@200;700&family=Wallpoet&display=swap');
+
+#game-page {
+    text-align: center;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyd0nZ2SUQypSA3bgICJCMicjEH_afkiK1rA&usqp=CAU');
+    background-size: cover;
 }
 
-.hidden {
-    display: none;
+#first-page {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyd0nZ2SUQypSA3bgICJCMicjEH_afkiK1rA&usqp=CAU');
+    background-size: cover;
 }
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Bungee Shade', cursive;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    border: 0.5px dashed black;
+    border-radius: 20px;
+    background-color: rgba(255, 192, 203, 0.75);
+}
+
+h2 {
+    font-family: 'Monoton', cursive;
+}
+
+h3 {
+    font-family: 'Bungee Shade', cursive;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    /* color: rgb(0, 255, 255); */
+    border: 0.5px dashed black;
+    border-radius: 20px;
+    background-color: rgba(255, 192, 203, 0.75);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    background-color: rgba(255, 192, 203, .78);
+    border: .5px dotted black;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.socials {
+    font-family: 'Bungee Shade', cursive;
+    display: inline;
+    margin: 25px;
+}
+
+/* .flex-container {
+    display: flex;
+} */
+
+.flex-child-3 {
+    /* flex: 3; */
+    background-color: rgba(0, 255, 255, .5);
+    border: 1px dashed black;
+    border-radius: 20px;
+    margin: 50px 25px;
+}
+
+.flex-child-5 {
+    /* flex: 3; */
+    background-color: rgba(0, 255, 255, .5);
+    border: 1px dashed black;
+    border-radius: 20px;
+    margin: 50px 25px;
+}
+
+
+
+#tama-game {
+    position: absolute;
+    left: 500px;
+}
+
+.flex-child-8 {
+    position: absolute;
+    left: 590px;
+    top: 500px;
+    /* text-align: center; */
+}
+
+.flex-child-9 {
+    background-color: rgba(0, 255, 255, .5);
+    border: 1px dashed black;
+    border-radius: 20px;
+    margin: 50px 25px;
+    text-align: center;
+    position: absolute;
+    left: 420px;
+    bottom: 10px;
+}
+
+.tama-status {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    display: inline;
+    /* background-color: aqua; */
+    align-items: center;
+    margin: 25px;
+    /* padding: 50px 25px 50px 25px; */
+}
+
+.game-rules {
+    font-family: 'Turret Road', cursive;
+    background-color: rgba(0, 255, 255, .5);
+    border: 1px dashed black;
+    border-radius: 20px;
+    position: absolute;
+    display: inline;
+    /* position: relative;
+    left: 30px; */
+}
+
+/* .flex-child:first-child {
+    justify-content: center;
+} */
+
+#tama-gifs img {
+    width: 250px;
+    height: 250px;
+}
+
+/* .hidden {
+    display: none;
+} */
 
 #tama-gifs {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.tama-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+#start-over {
+    background-color: rgba(0, 255, 255, .5);
+    font-family: 'Bungee Shade', cursive;
+    font-size: 20px;
+    padding: 10px 25px;
+    border: 1px dashed rgba(0, 255, 255, .5);
+    border-radius: 30px;
 }
+
+.tama-button {
+    margin: 20px 10px 40px 10px;
+}
+
+
 
 /* #firstpg-bg {
     background-image: url('https://media4.giphy.com/media/eZsKqkZUEM5vG/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g');

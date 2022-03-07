@@ -8,25 +8,26 @@
     <script src="./js/main.js" async defer></script>
     <title>Tamagotcha!</title>
 </head>
-<body id="firstpg-bg">
+<body class="flex-container" id="first-page">
 <!-- <body id="firstpg-bg" style="background-image: url('https://media4.giphy.com/media/eZsKqkZUEM5vG/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g')"> -->
     <header>
         <h1>Welcome to Tamagotcha!</h1>
-        <p>
+        <h3>
             Make sure to read the rules before getting started!
-        </p>
+        </h3>
     </header>
-    <section class="tama-game">
+    <section class="flex-child-6" id="tama-game">
         <div id="firstpg-gif">
-            <img src="https://media4.giphy.com/media/eZsKqkZUEM5vG/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g" alt="Dancing Pusheen" width="150px" height="100px">
+            <img src="https://i.pinimg.com/originals/24/b7/fe/24b7fe1713f6d2157b56b48df3302653.gif" alt="Balloon Pusheen" width="300px" height="250px">
+            <!-- <img src="https://media4.giphy.com/media/eZsKqkZUEM5vG/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g" alt="Dancing Pusheen" width="300px" height="250px"> -->
         </div>
         <button class="tama-button" id="feed">Feed</button>
         <button class="tama-button" id="play">Play</button>
         <button class="tama-button" id="nap">Nap</button>
     </section>
-    <aside class="game-rules">
-        <p class="game-rules">
-            Rules for the game: <br>
+    <aside class="flex-child-7" id="game-rules">
+        <p id="rules-para">
+            <!-- Rules for the game: <br> -->
             <ul class="game-rules">
                 <li>Name your pet!</li>
                 <li>Try to age your pet as far as you can!</li>
@@ -38,16 +39,16 @@
             </ul>
         </p>
     </aside>
-    <section class="tama-name">
+    <section class="flex-child-8" id="tama-name">
         <!-- <input type="name" id="name" placeholder="Name your pet!"> -->
         <!-- <input type="submit" id="name-tama" value="submit"> -->
         <button id="name-tama"><a href="firstpg.html">Start</a></button>
         <!-- <a href="index.html"></a> -->
     </section>
-    <footer>
+    <footer class="flex-child-9">
         <ul>
-            <li><a href="https://github.com/christielewis/">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/christie-lewis/">LinkedIn</a></li>
+            <li class="socials" id="gh"><a href="https://github.com/christielewis/">GitHub</a></li>
+            <li class="socials" id="linkdin"><a href="https://linkedin.com/in/christie-lewis/">LinkedIn</a></li>
         </ul>
     </footer>
 </body>

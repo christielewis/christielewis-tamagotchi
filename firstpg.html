@@ -8,33 +8,27 @@
     <script src="./js/main.js" async defer></script>
     <title>Welcome to Tamagotcha!</title>
 </head>
-<body>
+<body class="flex-comtainer" id="game-page">
     <header class="tama-info">
         <h1 id="greet-name">
         </h1>
-        <p id="game-over">
+        <h3 id="game-over">
 
-        </p>
+        </>
     </header>
-    <section class="tama-game">
+    <section class="flex-child-1" id="tama-game">
         <span id="tama-gifs">
-            <img src="https://media3.giphy.com/media/IMfi5ugpf3W1y/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g" alt="CoolPusheen">
+            <img src="https://media0.giphy.com/media/4PUkqN8QQsaFIkqi8a/giphy.gif?cid=6c09b95276f2d81951db2d1cd9b626e8512b3d8598c4a5d0&rid=giphy.gif&ct=s" alt="CoolPusheen">
         </span>
         <button class="tama-button" id="feed">Feed</button>
         <button class="tama-button" id="play">Play</button>
         <button class="tama-button" id="nap">Nap</button>
     </section>
-    <aside class="restart-game">
+    <section class="flex-child-2" id="start-game">
         <button id="start">Start</button>
-        <p id="start-over">
-            <!-- Game Over <br>
-                Play again! -->
-        </p>
-        <button id="yes">Yes</button>
-        <button><a href="index.html">No</a></button>
-        <!-- <button id="reset">Reset</button> -->
-    </aside>
-    <section class="tama-status">
+    </section>
+
+    <section class ="flex-child-3" id="tama-status">
         <ul id="tama-status-list">
             <li class="tama-status" id="stat-item-hunger">Hunger: <span id="hunger">0</span></li>
             <li class="tama-status" id="stat-item-boredom">Boredom: <span id="boredom">0</span></li>
@@ -42,10 +36,19 @@
             <li class="tama-status" id="stat-item-age">Age: <span id="age">0</span></li>
         </ul>
     </section>
-    <footer>
-        <ul>
-            <li><a href="https://github.com/christielewis/">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/christie-lewis/">LinkedIn</a></li>
+    <p id="start-over">
+        <!-- Game Over <br>
+            Play again! -->
+    </p>
+    <section class="flex-child-4" id="restart-game">
+        <button id="yes">Yes</button>
+        <button><a href="index.html">No</a></button>
+        <!-- <button id="reset">Reset</button> -->
+    </section>
+    <footer class="flex-child-5">
+        <ul id="social">
+            <li class="socials" id="github"><a href="https://github.com/christielewis/">GitHub</a></li>
+            <li class="socials" id="linkedin"><a href="https://linkedin.com/in/christie-lewis/">LinkedIn</a></li>
         </ul>
     </footer>
 </body>
