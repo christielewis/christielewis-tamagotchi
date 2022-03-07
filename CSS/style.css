@@ -63,9 +63,6 @@ button {
     margin: 25px;
 }
 
-/* .flex-container {
-    display: flex;
-} */
 
 .flex-child-2 {
     position: absolute;
@@ -101,7 +98,6 @@ button {
     bottom: 10px;
 }
 
-
 #tama-game {
     position: absolute;
     left: 500px;
@@ -111,7 +107,6 @@ button {
     position: absolute;
     left: 590px;
     top: 500px;
-    /* text-align: center; */
 }
 
 .flex-child-9 {
@@ -129,10 +124,8 @@ button {
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
     display: inline;
-    /* background-color: aqua; */
     align-items: center;
     margin: 25px;
-    /* padding: 50px 25px 50px 25px; */
 }
 
 .game-rules {
@@ -142,22 +135,12 @@ button {
     border-radius: 20px;
     position: absolute;
     display: inline;
-    /* position: relative;
-    left: 30px; */
 }
-
-/* .flex-child:first-child {
-    justify-content: center;
-} */
 
 #tama-gifs img {
     width: 250px;
     height: 250px;
 }
-
-/* .hidden {
-    display: none;
-} */
 
 #tama-gifs {
     display: flex;
@@ -180,10 +163,3 @@ button {
 .tama-button {
     margin: 20px 10px 40px 10px;
 }
-
-
-
-/* #firstpg-bg {
-    background-image: url('https://media4.giphy.com/media/eZsKqkZUEM5vG/giphy.gif?cid=ecf05e47r5d18g66l2d3uxxu33yyp15awd1cpwxdlf1yglxk&rid=giphy.gif&ct=g');
-    background-size: cover;
-} */
