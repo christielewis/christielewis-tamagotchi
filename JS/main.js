@@ -134,7 +134,7 @@ const hungerCountFunc = () => {
             hungerNum++;
             hungerCount.innerText = hungerNum;
         }
-    }, 2000);
+    }, 2500);
 }
 
 const boredomCountFunc = () => {
@@ -159,7 +159,7 @@ const ageCountFunc = () => {
     ageIncrement = setInterval(function() {
         ageNum++;
         ageCount.innerText = ageNum;
-    }, 1000);
+    }, 1250);
 
 }
 
