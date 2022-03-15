@@ -133,6 +133,9 @@ const hungerCountFunc = () => {
         if(hungerNum < 10) {
             hungerNum++;
             hungerCount.innerText = hungerNum;
+            if(hungerNum === 10) {
+                gameOver();
+            }
         }
     }, 2500);
 }
@@ -142,6 +145,9 @@ const boredomCountFunc = () => {
         if(boredomNum < 10) {
             boredomNum++;
             boredomCount.innerText = boredomNum;
+            if(boredomNum === 10) {
+                gameOver();
+            }
         }
     }, 3000);
 }
@@ -151,6 +157,9 @@ const sleepyCountFunc = () => {
         if(sleepyNum < 10) {
             sleepyNum++;
             sleepyCount.innerText = sleepyNum;
+            if(sleepyNum === 10) {
+                gameOver();
+            }
         }
     }, 4000);
 }
